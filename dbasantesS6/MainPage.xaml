@@ -4,49 +4,55 @@
              x:Class="dbasantesS6.MainPage">
 
     <StackLayout>
-        <Label Text="Consumo de ws con xamarin"></Label>
+
+        <Label Text="Consumo de WS con xamarin" FontSize="30" HorizontalOptions="Center" />
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Text="Codigo" FontSize="16" TextColor="red" Grid.Row="0" Grid.Column="0"></Label>
-            <Label Text="Nombre" FontSize="16" TextColor="red" Grid.Row="0" Grid.Column="1"></Label>
-            <Label Text="Apellido" FontSize="16" TextColor="red" Grid.Row="0" Grid.Column="2"></Label>
-            <Label Text="Edad" FontSize="16" TextColor="red" Grid.Row="0" Grid.Column="3"></Label>
+            <Label Text="Codigo" FontSize="16" TextColor="Red" Grid.Row="0" Grid.Column="0" BackgroundColor="Aquamarine"/>
+            <Label Text="Nombre" FontSize="16" TextColor="Red" Grid.Row="0" Grid.Column="1" BackgroundColor="Aquamarine"/>
+            <Label Text="Apellido" FontSize="16" TextColor="Red" Grid.Row="0" Grid.Column="2" BackgroundColor="Aquamarine"/>
+            <Label Text="Edad" FontSize="16" TextColor="Red" Grid.Row="0" Grid.Column="3" BackgroundColor="Aquamarine"/>
+
+
         </Grid>
-        <ListView x:Name="listaEstudiantes">
+
+        <ListView x:Name="listaEstudiante" ItemSelected="listaEstudiante_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Label x:Name="lblCodigo" Text="{ Binding codigo}" Grid.Row="0" Grid.Column="0"></Label>
-                                <Label x:Name="lblNombre" Text="{ Binding nombre}" Grid.Row="0" Grid.Column="1"></Label>
-                                <Label x:Name="lblApellido" Text="{ Binding apellido}" Grid.Row="0" Grid.Column="2"></Label>
-                                <Label x:Name="lblEdad" Text="{ Binding edad}" Grid.Row="0" Grid.Column="3"></Label>
+                                <Label x:Name="lblCodigo" Text="{Binding codigo}" Grid.Row="0" Grid.Column="0" />
+                                <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"/>
+                                <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2"/>
+                                <Label x:Name="lblEdad" Text="{Binding edad}" Grid.Row="0" Grid.Column="3"/>
                             </Grid>
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="btnConsultar" Text="Consultar" Clicked="btnConsultar_Clicked"></Button>
+        <Button x:Name="btnconsultar" Text="Insertar Estudiante" Clicked="btnconsultar_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>
