@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dbasantesS6.Insertar">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Insertar Estudiente" FontSize="20" HorizontalTextAlignment="Center" />
+            <Entry x:Name="txtCodigo" Placeholder="Ingrese el codigo" Keyboard="Numeric"></Entry>
+            <Entry x:Name="txtNombre" Placeholder="Ingresar Nombre"></Entry>
+            <Entry x:Name="txtApellido" Placeholder="Ingresar apellido "></Entry>
+            <Entry x:Name="txtEdad"  Keyboard="Numeric"></Entry>
+            <Button x:Name="btnIngresar" Text="Ingresar" Clicked="btnIngresar_Clicked"></Button>
+                
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -21,7 +21,7 @@
             <Label Text="Apellido" FontSize="16" TextColor="red" Grid.Row="0" Grid.Column="2"></Label>
             <Label Text="Edad" FontSize="16" TextColor="red" Grid.Row="0" Grid.Column="3"></Label>
         </Grid>
-        <ListView x:Name="listaEstudiantes">
+        <ListView x:Name="listaEstudiantes" ItemSelected="listaEstudiantes_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -46,7 +46,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="btnConsultar" Text="Consultar" Clicked="btnConsultar_Clicked"></Button>
+        <Button x:Name="btnConsultar" Text="Insertar Estudiente" Clicked="btnConsultar_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>

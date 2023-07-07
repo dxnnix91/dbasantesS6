@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dbasantesS6.Eliminar">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Actualizar o Eliminar" TextColor="Red" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="txtCodigo" Placeholder="Ingrese el codigo" Keyboard="Numeric" IsEnabled="False"></Entry>
+            <Entry x:Name="txtNombre" Placeholder="Ingresar Nombre"></Entry>
+            <Entry x:Name="txtApellido" Placeholder="Ingresar apellido "></Entry>
+            <Entry x:Name="txtEdad"  Keyboard="Numeric"></Entry>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnActualizar" Text="Actualizar" Clicked="btnActualizar_Clicked" Grid.Row="0" Grid.Column="0"></Button>
+                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" Grid.Row="0" Grid.Column="1"></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -13,7 +13,7 @@ namespace dbasantesS6
 {
     public partial class MainPage : ContentPage
     {
-        private string url = "192.168.10.41/uisrael/post.php";
+        private string url = "http://192.168.10.41/uisrael/post.php"; 
         private readonly HttpClient Client = new HttpClient();
         private ObservableCollection<Estudiante> post;
         public MainPage()
@@ -24,10 +24,7 @@ namespace dbasantesS6
 
         private async void btnConsultar_Clicked(object sender, EventArgs e)
         {
-            var contenido = await Client.GetStringAsync(url);
-            List<Estudiante> datosPost = JsonConvert.DeserializeObject<List<Estudiante>>(contenido);
-            post = new ObservableCollection<Estudiante>(datosPost);
-            listaEstudiantes.ItemsSource = post;
+            await Navigation.PushAsync(new Insertar());
         }
 
         public async void Obtener()
@@ -36,6 +33,12 @@ namespace dbasantesS6
             List<Estudiante> datosPost = JsonConvert.DeserializeObject<List<Estudiante>>(contenido);
             post = new ObservableCollection<Estudiante>(datosPost);
             listaEstudiantes.ItemsSource = post;
+        }
+
+        private void listaEstudiantes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var objetoEstudiante = (Estudiante)e.SelectedItem;
+            Navigation.PushAsync(new Eliminar(objetoEstudiante));
         }
     }
 }
