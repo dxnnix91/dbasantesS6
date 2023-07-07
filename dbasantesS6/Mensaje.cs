@@ -4,7 +4,9 @@ using System.Text;
 
 namespace dbasantesS6
 {
-    internal interface Mensaje
+    public interface Mensaje
     {
+        void shorAlert(string mensaje);
+        void longAlert(string mensaje);
     }
 }

@@ -39,7 +39,8 @@ namespace dbasantesS6
                 var parametros = txtCodigo.Text + "&nombre=" + txtNombre.Text + "&apellido=" + txtApellido.Text + "&edad=" + txtEdad.Text;
 
                 cliente.UploadValues(url + parametros, "PUT", datos);
-                DisplayAlert("Alerta", "Dato Actualizado", "Cerrar");
+                var mensaje = "Dato modificado correctamente";
+                DependencyService.Get<Mensaje>().longAlert(mensaje);
                 Navigation.PushAsync(new MainPage());
 
             }
@@ -56,7 +57,10 @@ namespace dbasantesS6
                 var datos = new System.Collections.Specialized.NameValueCollection();
                 datos.Add("codigo", txtCodigo.Text);
                 client.UploadValues(url+txtCodigo.Text,"DELETE", datos);
+                var mensaje = "Dato eliminado correctamente";
+                DependencyService.Get<Mensaje>().longAlert(mensaje);
                 Navigation.PushAsync(new MainPage());
+
             }
             catch (Exception ex)
             {

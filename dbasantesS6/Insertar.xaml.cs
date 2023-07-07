@@ -31,6 +31,8 @@ namespace dbasantesS6
                 datos.Add("apellido", txtApellido.Text);
                 datos.Add("edad", txtEdad.Text);
                 client.UploadValues(url, "POST", datos);
+                var mensaje = "Dato Ingresado con exito";
+                DependencyService.Get<Mensaje>().longAlert(mensaje);
                 Navigation.PushAsync(new MainPage());
             }
             catch (Exception ex)
